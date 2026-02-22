@@ -13,16 +13,12 @@ int main()
     {
         factor =0;
     }
-    factor =isPositive ? 1:-1;// isPositive is true factor is 1 or factor is -1;
+    factor =isPositive ? 1:-1;
+    // isPositive is true factor is 1 or factor is -1;
     std::cout<<"factor = "<<factor<<std::endl;
 
 
 
-
-
-
-
-
-
     return 0;
+
 }
