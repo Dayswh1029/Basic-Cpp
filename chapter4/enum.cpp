@@ -1,19 +1,17 @@
 #include<iostream>
 #include <cstdint> // 包含 int32_t 和 int8_t 的定义
 #include<cmath>
-enum color{ WHITE, BLACK, RED, GREEN,BLUE,YELLOW,NUM_COLORS};
+enum color{ WHITE, BLACK, RED, GREEN,BLUE,YELLOW,NUM_COLORS};// 默认从0开始！ 
 // NUM_COLORS  默认为6 ！ 可以随着改变！
-
-enum datatype{ TYPE_INT8=1, TYPE_INT16=2, TYPE_INT32=4, TYPE_INT64=8};
+enum datatype{ TYPE_INT8=1, TYPE_INT16=2, TYPE_INT32=4, TYPE_INT64=8};// 采用了直接赋值！ 
 struct Point{
     enum datatype type;
-
     union{
-        // 共享内存！
-        std::int8_t data8[3]; 
-        std::int16_t data16[3];
-        std::int32_t data32[3];
-        std::int64_t data64[3];
+        // 共享内存！选择 最大的那个！ 而且每次的使用只可以使用一个！不可能同时被用
+        std::int8_t data8[3]; // 3*1 
+        std::int16_t data16[3];// 3*2
+        std::int32_t data32[3];// 3*4
+        std::int64_t data64[3]; //3*8=24 ； 这就是最大的内存！ 24bytes！ 
 
     };
 };
@@ -62,19 +60,14 @@ int main()
     std::cout<<"color_index = "<<color_index<<std::endl;
 
     // declaration and initialization 
-
     Point point1 = {.type = TYPE_INT8, .data8={-2,3,4}};
     Point point2 = {.type = TYPE_INT32, .data32={1,-2,3}};
 
     std::cout<<"Data width = "<<datawidth(point1)<<std::endl;
     std::cout<<"Data width = "<<datawidth(point2)<<std::endl;
-
+    
     std::cout<<"L1 norm = "<<l1norm(point1)<<std::endl;
     std::cout<<"L1 norm = "<<l1norm(point2)<<std::endl;
-
-
-
-
-
     return 0;
+
 }
