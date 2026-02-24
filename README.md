@@ -1,4 +1,2 @@
-# Basic-Cpp  
-# chapter 1  
-# chapter 2  
+<sub>这个库主要是我学习基础的c++ 知识！ </sub>
 
