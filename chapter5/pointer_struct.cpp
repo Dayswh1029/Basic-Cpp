@@ -3,12 +3,10 @@ struct Student{
     char name[4];
     int born;
     bool male;
-
 };
-
 int main()
 {
-    Student s;
+    Student s; 
     s={"Yu",2002,true};
     Student* stu_ptr1 =&s;
     std::cout<<"the address of struct: "<<stu_ptr1<<std::endl;
@@ -28,4 +26,5 @@ int main()
 
     std::cout<<"sizeof(s) = "<<sizeof(s)<<std::endl;
     return 0;
+
 }
