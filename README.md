@@ -1,2 +1,4 @@
-# Basic-Cpp
-简单的c++ 基础的知识！
+# Basic-Cpp  
+# chapter 1  
+# chapter 2  
+
