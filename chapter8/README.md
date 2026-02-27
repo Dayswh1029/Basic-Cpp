@@ -1,6 +1,7 @@
 
 # Chapter 8: Speedup Your Program  
 我的是Intel 因此需要利用其余办法解决ARM 的案例程序
+自己部署了 docker 来模拟 ARM
 
 ## Compiler options (-O3 for GCC, -Wall, etc…)
 
