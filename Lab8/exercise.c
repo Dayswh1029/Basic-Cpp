@@ -7,7 +7,7 @@
 
 #ifdef _WIN32
     #include <malloc.h>
-    // Windows 下使用 _aligned_malloc
+    // Windows 下使用 _aligned_malloc //  
     #define MY_ALIGNED_ALLOC(alignment, size) _aligned_malloc(size, alignment)
     #define MY_ALIGNED_FREE(ptr) _aligned_free(ptr)
 #else
@@ -19,12 +19,13 @@
 
 int main() {
     // 使用 aligned_alloc 保证 AVX2 对齐 (32 bytes)
-    // float *a = (float*)aligned_alloc(32, N * sizeof(float));
-    // float *b = (float*)aligned_alloc(32, N * sizeof(float));
-    // float *c = (float*)aligned_alloc(32, N * sizeof(float));
+    // float *a = (float*)aligned_alloc(32, N * sizeof(float)); // 这个aligned_alloc 常常有错误问题！
+    //如果你在 Windows 上，aligned_alloc 并不总是直接可用，Windows 下通常使用 _aligned_malloc。
 
 // 替换前：
 // float *a = (float*)aligned_alloc(32, N * sizeof(float));
+// float *b = (float*)aligned_alloc(32, N * sizeof(float));
+// float *c = (float*)aligned_alloc(32, N * sizeof(float));
 
 // 替换后：
 float *a = (float*)MY_ALIGNED_ALLOC(32, N * sizeof(float));
@@ -62,4 +63,5 @@ MY_ALIGNED_FREE(a);
 
     free(a); free(b); free(c);
     return 0;
+
 }
