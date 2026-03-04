@@ -56,7 +56,7 @@ void Student::printInfo()
 int main()
 {
 
-        // 创建array 
+    // 创建array 指针 可以数组的操作！
     Student * class1= new Student[3]{
 
         {"Tom",2000,true},
@@ -64,8 +64,9 @@ int main()
         {"Amy",2000,true},
     };
     class1[1].printInfo();
-    class1->printInfo(); // class1为 指针！ class1[0]
+    class1->printInfo(); // class1为 指针！ class1[0] 
     class1[2].printInfo();
+
 
 
 
