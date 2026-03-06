@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 
 class Mytime{
     private:
@@ -27,10 +28,10 @@ class Mytime{
             this->minutes%=60;
         }
 
-
-
         ~Mytime(){}
+
         //下面是overloading operator
+
         //1, operator + 重载的+ 一定要注意60 进一！！
         Mytime operator+(const Mytime& other)const
         {
@@ -157,10 +158,7 @@ int main ()
     t3+=t2;
     t3.operator+=(t2); //function 
     std::cout<<t3.getTime()<<std::endl;
-
     Mytime t5(130);
     std::cout<<t5.getTime()<<std::endl;
-
-
     return 0;
 }
