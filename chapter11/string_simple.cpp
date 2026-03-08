@@ -1,7 +1,5 @@
 #include<iostream>
 #include<cstring>
-
-
 class Mystring{
     private:
         int buf_len;
@@ -12,7 +10,6 @@ class Mystring{
             std::cout<<"Constructor(int char*)"<<std::endl;
             this->characters=nullptr;
             create(buf_len,data);
-
         }
         // 1， 拷贝构造 自己定义！！！
         Mystring(const Mystring& other)
@@ -35,11 +32,9 @@ class Mystring{
             return *this; // 直接返回自己！
              
         }
-
         ~Mystring()
         {
-            release();
-            
+            release(); 
         }
         // 如果成功返回1 如果失败返回 0！！
         bool create(int buf_len,const char* data)
@@ -73,7 +68,6 @@ class Mystring{
         }
 
 };
-
 
 
 int main()
