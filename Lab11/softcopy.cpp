@@ -71,11 +71,12 @@ int main()
     {
         PtrSoftcopy s3(s1);
         std::cout << s1.getRef_count()<<"\n";  // 3
-    }   // s3 destructor 
+    }   // s3 destructor { } s3 消失！  
 
     std::cout << s1.getRef_count();  // 2
 
 
 
     return 0;
+
 }
