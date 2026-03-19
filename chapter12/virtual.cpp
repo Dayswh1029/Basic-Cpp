@@ -75,3 +75,5 @@ int main()
 // 自己补充一下 vptr 
 // vptr（virtual pointer） 是编译器在每个对象内部自动插入的一个指针，指向该对象所属类的虚函数表。
 // vtable 是类级别的，不是对象级别的(this)
+// vtable 每个类只有一张，所有对象共享
+// vptr 每个对象都有一个，指向自己类的 vtable
