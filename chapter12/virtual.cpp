@@ -38,7 +38,7 @@ class Student:public Person{
             std::cout<<"Name: "<<name;
             std::cout<<". ID: "<<id<<std::endl;
         }
-        
+     //   只有一个 vptr，构造过程中被更新了两次，最终指向 Student 的 vtable
         ~Student() // 子类 会因为 父类 有 virtual 自动加上！！！
         {
 
