@@ -13,6 +13,7 @@ class Person{
     // {
     //     std::cout<<"Name: "<<name<<std::endl;
     // }
+    virtual ~Person() {}  // 无论如何加上
 };
 
 class Person2
@@ -38,7 +39,7 @@ class Student:public Person{
             std::cout<<". ID: "<<id<<std::endl;
         }
         
-        ~Student()
+        ~Student() // 子类 会因为 父类 有 virtual 自动加上！！！
         {
 
         }
