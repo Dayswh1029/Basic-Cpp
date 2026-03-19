@@ -6,12 +6,13 @@ class Person{
         std::string name;
     Person(std::string n):name(n)
     {
-
+        // 
     }
-    virtual void print()
-    {
-        std::cout<<"Name: "<<name<<std::endl;
-    }
+    virtual void print()=0;
+    // void print() 
+    // {
+    //     std::cout<<"Name: "<<name<<std::endl;
+    // }
 };
 
 class Person2
@@ -36,6 +37,7 @@ class Student:public Person{
             std::cout<<"Name: "<<name;
             std::cout<<". ID: "<<id<<std::endl;
         }
+        
         ~Student()
         {
 
