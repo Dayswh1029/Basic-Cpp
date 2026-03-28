@@ -73,12 +73,8 @@ int main()
 
     std::cout<<v2.getElement(2,0)<<std::endl;
 
-
-
-
-
-
-
+// 一个 特别的应用  有限元 单元刚度 计算！ Mat<double, 2,2> // 1D 
+// 然后 装配到 全局 刚度矩阵！
 
 
 
