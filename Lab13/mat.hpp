@@ -47,4 +47,96 @@ void Mat<T>::addMat(T otherArray[])
 }
 
 
+// non-type template parameter 
+
+template<typename T, size_t size>
+class Mat2
+{
+    private: 
+        T arr[size]; // automatic array  initialization 
+    public:
+        void insert()
+        {
+            int i=1;
+            for(int j=0;j<size;j++)
+            {
+                arr[j]=i;
+                i++;
+            }
+        }
+        void display()
+        {
+            for(int i=0;i<size;i++)
+            {
+                std::cout<<arr[i]<<" ";
+            }
+            std::cout<<std::endl;
+        }
+
+};
+
+// numtiple  parameters 
+
+template <typename T1, typename T2>
+class A
+{
+    private:
+        T1 a;
+        T2 b;
+    public:
+        A(T1 x,T2 y):a(x),b(y)
+        {
+
+        }
+        void display()
+        {
+            std::cout<<"values of a and b are: "<<a<<" ,"<<b<<std::endl;
+
+        }
+
+};
+
+
+
+// multiple and  default parameters
+template<typename T,typename U, typename V=char>
+class MultipleParameters
+{
+    private:
+        T var1;
+        U var2;
+        V var3;
+
+    public:
+        MultipleParameters(T v1, U v2, V v3):var1(v1),var2(v2),var3(v3){}
+
+        void printVar()
+        {
+            std::cout<<"var1 = "<<var1<<std::endl;
+            std::cout<<"var2 = "<<var2<<std::endl;
+            std::cout<<"var3 = "<<var3<<std::endl;
+        }
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif  // MATRIX_H
