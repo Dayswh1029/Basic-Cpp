@@ -85,7 +85,7 @@ class Dictionary
 
 
 // partial  specialization 
-
+// 很多可以采用 继承！ 不需要重写 ！ 
 template<typename Value>
 class Dictionary<int,Value>
 {
